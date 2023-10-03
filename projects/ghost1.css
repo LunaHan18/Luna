@@ -20,7 +20,7 @@ body{
   content:'';
   position:absolute;
 }
-.halloween{
+.halloween{padding-top: 400px;
   top:50%;
   left:50%;
   width:30px;

@@ -1,0 +1,56 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        font-family: "Roboto", sans-serif;
+        background-color: #E4A4A1;
+    }
+
+    main, footer {
+        padding: 20px;
+    }
+
+    main {
+        color: #141835;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        /* 1. Move the footer to the bottom of the viewport using the fixed property */
+        /* 2. Set the footer to the bottom of the viewport */
+        /* 3. Make sure the footer has a width that is as wide as the viewport */
+        background: #141835;
+    }
+
+    footer a {
+        color: #FFFFFF;
+        text-decoration: none;
+        /* 4. Change the default color for the text from blue to #FFFFFF */
+        /* 5. Remove the default underline using the text-decoration property */
+    }
+    figure{
+        width:50%;
+        margin: auto;
+        position:relative
+    }
+    img{
+        width:100%;
+    }
+    figcaption{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        color: white;
+    }
+
+    /* Write the code for the image here */

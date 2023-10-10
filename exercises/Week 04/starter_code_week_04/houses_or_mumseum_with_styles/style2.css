@@ -1,5 +1,7 @@
 body{
-    margin-top: 100px;
+    margin: 0px;
+  }
+main{
     margin-left: 400px;
     margin-right: 400px;
     margin-bottom: 200px;
@@ -10,25 +12,80 @@ h4{
 }
 a{
     text-decoration: none;
-    color:rgb(73, 31, 51)
+    color:rgb(180, 49, 104);
+    font-weight: bolder;
 }
 h1{
     color:white;
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+    font-family: 'Monoton', sans-serif;
+    font-size: 50px;
+    font-weight: lighter;
 }
+
 h3{
     color:rgb(253, 243, 243);
-    font-style: italic;
-    font-weight: bold;
-
+    font-size: 20px;
+    font-family: 'Yeseva One', serif;
+    font-weight: normal;
 }
 p{
     color:rgb(63, 32, 100);
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: bolder;
 }
-p2{
+strong{
     font-weight: bold;
     color:rgb(42, 52, 197);
-    font-size: large;
+    font-size: 30px;
+    font-family: 'Yeseva One', serif;
 }
+em{
+    font-family: 'Sriracha', cursive;
+    font-size: 18px;
+}
+.header {
+    width: 100%;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px);
+    color: #fff; 
+    padding: 10px;
+    text-align: center;
+    height:50px;
+  }
+  .nav {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    font-family: 'Unica One', sans-serif;
+    font-size: 20px;
+    margin-top: 14px;
+    margin-left: 20px;
+  }
+  
+  .nav li {
+    display: inline;
+    margin-left: 20px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: lighter;
+  }
+  .header h2 {
+    font-family: 'Bungee Shade', sans-serif;
+    text-align: right;
+    margin-top: -62px;
+    margin-right: 20px;
+  }
+  
+  .header::after {
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+  }

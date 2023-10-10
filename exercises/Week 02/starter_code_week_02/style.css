@@ -6,6 +6,9 @@ main{
   position: absolute;
   top: 35%;
 }
+main ul{
+  font-family: 'Josefin Slab', serif;
+}
 h1{
     color: white;
     font-weight: bold;
@@ -19,6 +22,7 @@ h5{
 }
 a{
     text-decoration: none;
+    color: #682968;
 }
 footer {
   bottom: 0;
@@ -44,7 +48,7 @@ p{
 .nav {
   list-style-type: none;
   padding: 0;
-  text-align: left;
+  float:left;
   font-family: 'Unica One', sans-serif;
   font-size: 20px;
   margin-top: 14px;
@@ -62,11 +66,11 @@ p{
   font-weight: lighter;
 }
 .header-right {
-  font-family: 'Bungee Shade', sans-serif;
-  text-align: right;
+  font-family: 'Unica One', sans-serif;
+  float:right;
   margin-right: 20px;
   font-size: 25px;
-  margin-top: -65px;
+  margin-top: 10px;
 }
 
 .header::after {

@@ -11,12 +11,6 @@ h1{
     font-weight: bold;
     font-family: 'Bungee Outline', sans-serif;
 }
-h2{
-  font-family: 'Bungee Shade', sans-serif;
-  text-align: right;
-  margin-top: -60px;
-  margin-right: 20px;
-}
 h3{
     color: rgb(75, 26, 104);
 }
@@ -44,28 +38,36 @@ p{
   color: #fff; 
   padding: 10px;
   text-align: center;
-  height: 70px;
+  height:70px;
 }
 .nav {
   list-style-type: none;
   padding: 0;
   text-align: left;
+  font-family: 'Unica One', sans-serif;
+  font-size: 20px;
+  margin-top: 14px;
+  margin-left: 20px;
 }
 
 .nav li {
   display: inline;
   margin-left: 20px;
-  margin-top: 20px;
 }
 
 .nav a {
   text-decoration: none;
   color: #fff;
-  font-weight: bold;
+  font-weight: lighter;
+}
+.header h2 {
+  font-family: 'Bungee Shade', sans-serif;
+  text-align: right;
+  margin-top: -62px;
+  margin-right: 20px;
 }
 
 .header::after {
-  content: "";
   opacity: 0.3;
   top: 0;
   left: 0;

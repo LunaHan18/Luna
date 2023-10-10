@@ -39,6 +39,7 @@ p{
   padding: 10px;
   text-align: center;
   height:70px;
+  top: 0;
 }
 .nav {
   list-style-type: none;

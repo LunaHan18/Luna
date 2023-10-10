@@ -60,11 +60,12 @@ p{
   color: #fff;
   font-weight: lighter;
 }
-.header h2 {
+.header-right {
   font-family: 'Bungee Shade', sans-serif;
   text-align: right;
-  margin-top: -62px;
   margin-right: 20px;
+  font-size: 25px;
+  margin-top: -65px;
 }
 
 .header::after {

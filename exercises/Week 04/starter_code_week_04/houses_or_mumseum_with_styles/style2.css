@@ -5,6 +5,7 @@ main{
     margin-left: 400px;
     margin-right: 400px;
     margin-bottom: 200px;
+    margin-top: 100px;
 }
 h4{
     text-align: right;
@@ -44,6 +45,10 @@ strong{
 em{
     font-family: 'Sriracha', cursive;
     font-size: 18px;
+}
+header{
+  height:70px;
+  position: fixed;
 }
 .header {
   width: 100%;
@@ -90,4 +95,35 @@ em{
   bottom: 0;
   right: 0;
   position: absolute;
+}
+
+footer{
+  height: 50px;
+  bottom:0;
+}
+.footer{
+  width: 100%;
+  background-color: rgba(255,255,255,0.2);
+  backdrop-filter: blur(6px);
+  color: #fff; 
+  height: 30px;
+  bottom:0;
+  padding: 10px;
+}
+
+.footer-left{
+  float:left;
+  font-family: 'Unica One', sans-serif;
+  color: #fff; 
+  font-size: 20px;
+  margin-bottom: 14px;
+  margin-left: 20px;
+}
+.footer-right{
+  float:right;
+  font-family: 'Unica One', sans-serif;
+  color: #fff; 
+  font-size: 20px;
+  margin-bottom: 14px;
+  margin-right: 20px;
 }

@@ -49,6 +49,7 @@ em{
 header{
   height:70px;
   position: fixed;
+  box-sizing: border-box;
 }
 .header {
   width: 100%;

@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, 
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    /* Define the height of the navigation bar in pixels */
+    height: 60px;
+    background-color: green;
+}
+
+ul.flex-container {
+  /* This is the parent element where you will set display:flex  */
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  background: tomato;
+  line-height: 60px;
+}
+
+a {
+    /* These are the children elements */
+    color:black;
+    text-decoration: none;
+}

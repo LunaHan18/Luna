@@ -35,23 +35,28 @@ p{
     position: relative;
     text-align: center;
 }
+header{
+  width: 100%;
+}
+
 .header {
   width: 100%;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.4);
   backdrop-filter: blur(6px);
-  color: #fff; 
-  padding: 10px;
+  color: #ffffff; 
   text-align: center;
   height:70px;
   top: 0;
+  z-index: 1;
 }
+
 .nav {
   list-style-type: none;
   padding: 0;
   float:left;
   font-family: 'Unica One', sans-serif;
   font-size: 20px;
-  margin-top: 14px;
+  margin-top: 24px;
   margin-left: 20px;
 }
 
@@ -62,26 +67,18 @@ p{
 
 .nav a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   font-weight: lighter;
 }
+
 .header-right {
   font-family: 'Unica One', sans-serif;
   float:right;
   margin-right: 20px;
   font-size: 25px;
-  margin-top: 10px;
+  margin-top: 20px;
+  color: #ffffff;
 }
-
-.header::after {
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-}
-
 
 
 

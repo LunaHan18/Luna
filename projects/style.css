@@ -1,9 +1,15 @@
 body{
     margin: 0px;
+    padding: 0;
     background: radial-gradient(300% 100% at top, #f7e9e8 40%,  #5b708d) fixed;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+  }
+
+  html{
+    margin: 0;
+    padding: 0;
   }
 
 main{
@@ -263,3 +269,12 @@ footer {
 .footer-section button:hover {
     background-color: #ff6e40;
 }
+
+@media screen and (min-width: 600px) {
+    section {
+    width: 70%;
+    }
+    aside {
+    width: 30%;
+    }
+    }

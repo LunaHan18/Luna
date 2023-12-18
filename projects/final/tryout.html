@@ -4,202 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Circles</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            margin: 0;
-        }
-
-        #circle-container {
-            position: relative;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-        }
-
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background-color: #3498db;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-        }
-
-        #tag-container {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .tag {
-            display: inline-block;
-            margin: 0 10px;
-            padding: 5px 10px;
-            background-color: #2ecc71;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        #clear-button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px 10px;
-            background-color: #e74c3c;
-            color: #fff;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
 
-<div id="tag-container">
-    <div class="tag" onclick="filterCircles('tag1')">Tag 1</div>
-    <div class="tag" onclick="filterCircles('tag2')">Tag 2</div>
-    <div class="tag" onclick="filterCircles('tag3')">Tag 3</div>
-    <!-- Add more tags as needed -->
-    <div id="clear-button" onclick="clearFilter()">Clear</div>
-</div>
+    <div class="tag-container">
+        <div class="tag" onclick="filterByTag('tag1')">Tag 1</div>
+        <div class="tag" onclick="filterByTag('tag2')">Tag 2</div>
+        <div class="tag" onclick="filterByTag('tag3')">Tag 3</div>
+        <div id="clear-button" onclick="clearFilter()">Clear</div>
+    </div>
 
-<div id="circle-container"></div>
+    
+        <div class="grid">
+            <div class="image-container">
+                <img src="./image/1.png" data-tags="tag1" />
+                <div class="text-overlay">Text for Image 1</div>
+            </div>
+            <div class="image-container">
+                <img src="./image/2.png" data-tags="tag2" />
+                <div class="text-overlay">Text for Image 2</div>
+            </div>
+            <div class="image-container">
+                <img src="./image/3.jpg" data-tags="tag1 tag2" />
+                <div class="text-overlay">Text for Image 3</div>
+            </div>
+            <img src="./image/4.jpeg" data-tags="tag3" />
+            <img src="./image/5.jpeg" data-tags="tag1 tag3" />
+            <img src="./image/6.jpg" data-tags="tag2 tag3" />
+            <img src="./image/7.jpg" data-tags="tag1" />
+            <img src="./image/8.jpg" data-tags="tag2" />
+            <img src="./image/9.jpg" data-tags="tag3" />
+            <img src="./image/10.jpg" data-tags="tag1 tag2 tag3" />
+            <img src="./image/11.jpg" data-tags="tag1 tag2" />
+            <img src="./image/12.jpg" data-tags="tag2 tag3" />
+            <img src="./image/13.jpg" data-tags="tag1 tag3" />
+            <img src="./image/14.jpg" data-tags="tag1" />
+            <img src="./image/15.jpg" data-tags="tag2" />
+            <img src="./image/16.jpg" data-tags="tag3" />
+            <img src="./image/17.jpg" data-tags="tag1 tag2 tag3" />
+            <img src="./image/26.jpg" data-tags="tag1 tag2 tag3" />
+            <img src="./image/31.jpg" data-tags="tag1 tag2 tag3" />
+            <img src="./image/38.jpg" data-tags="tag1 tag2 tag3" />
+        </div>
+    
+    <script>
+        function filterByTag(tag) {
+            const images = document.querySelectorAll('.image-container > img');
 
-<script>
-    const circleContainer = document.getElementById('circle-container');
-    const tags = ['tag1', 'tag2', 'tag3']; // Add more tags as needed
-    const separationFactor = 1.5; // Adjust as needed
-    const minDistance = 10;
-    const maxDistance = 400;
-    const minStartSize = 150;
-    const maxStartSize = 200;
-    const growSize = 250;
-    const shrinkSize = 80;
-
-    // Generate random circles
-    for (let i = 0; i < 30; i++) {
-        createCircle();
-    }
-
-    function createCircle() {
-        const circle = document.createElement('div');
-        circle.className = 'circle';
-        const width = getRandomStartSize();
-        circle.style.width = width + 'px';
-        circle.style.height = width + 'px';
-
-        // Set random position ensuring the circle is not touching others
-        positionCircle(circle);
-
-        // Assign random tags to circles
-        circle.setAttribute('data-tags', getRandomTags());
-        circle.setAttribute('data-grown', 'false'); // Initial state
-
-        // Add click event listener to each circle
-        circle.addEventListener('click', () => {
-            alert('Circle clicked! Tags: ' + circle.getAttribute('data-tags'));
-        });
-
-        circleContainer.appendChild(circle);
-    }
-
-    function getRandomStartSize() {
-        return Math.floor(Math.random() * (maxStartSize - minStartSize + 1)) + minStartSize; // Adjust as needed
-    }
-
-    function getRandomPosition() {
-        return Math.floor(Math.random() * (window.innerWidth - 2 * maxDistance)); // Adjust as needed
-    }
-
-    function getRandomTags() {
-        const randomTags = [];
-        for (let i = 0; i < Math.floor(Math.random() * tags.length) + 1; i++) {
-            randomTags.push(tags[Math.floor(Math.random() * tags.length)]);
-        }
-        return randomTags.join(' ');
-    }
-
-    function isColliding(element) {
-        const circles = document.querySelectorAll('.circle');
-        for (const otherCircle of circles) {
-            if (element !== otherCircle) {
-                const rect1 = element.getBoundingClientRect();
-                const rect2 = otherCircle.getBoundingClientRect();
-                if (!(rect1.right < rect2.left || rect1.left > rect2.right || rect1.bottom < rect2.top || rect1.top > rect2.bottom)) {
-                    return true;
+            images.forEach(image => {
+                const tags = image.getAttribute('data-tags').split(' ');
+                if (tags.includes(tag)) {
+                    growImage(image);
+                } else {
+                    shrinkImage(image);
                 }
-            }
-        }
-        return false;
-    }
-
-    function isFarFromOthers(element) {
-        const circles = document.querySelectorAll('.circle');
-        const minDistanceSquared = minDistance * minDistance;
-
-        for (const otherCircle of circles) {
-            if (element !== otherCircle) {
-                const rect1 = element.getBoundingClientRect();
-                const rect2 = otherCircle.getBoundingClientRect();
-                const distanceSquared = Math.pow(rect1.left - rect2.left, 2) + Math.pow(rect1.top - rect2.top, 2);
-
-                if (distanceSquared < minDistanceSquared) {
-                    return false;
-                }
-            }
+            });
         }
 
-        return true;
-    }
+        function clearFilter() {
+            const images = document.querySelectorAll('.image-container > img');
+            images.forEach(image => samesize(image));
+        }
 
-    function positionCircle(circle) {
-        do {
-            circle.style.left = getRandomPosition() + 'px';
-            circle.style.top = getRandomPosition() + 'px';
-        } while (isColliding(circle) || !isFarFromOthers(circle));
-    }
+        function growImage(image) {
+            image.style.width = '800px';
+        }
 
-    function filterCircles(tag) {
-        const circles = document.querySelectorAll('.circle');
+        function shrinkImage(image) {
+            image.style.width = '100px';
+        }
 
-        circles.forEach(circle => {
-            const circleTags = circle.getAttribute('data-tags').split(' ');
-            const hasTag = circleTags.includes(tag);
-            const isGrown = circle.getAttribute('data-grown') === 'true';
-
-            if (hasTag && !isGrown) {
-                growCircle(circle);
-                circle.setAttribute('data-grown', 'true');
-            } else if (!hasTag && isGrown) {
-                shrinkCircle(circle);
-                circle.setAttribute('data-grown', 'false');
-            }
-        });
-    }
-
-    function growCircle(circle) {
-        const growWidth = growSize;
-        const growHeight = growSize;
-
-        circle.style.width = growWidth + 'px';
-        circle.style.height = growHeight + 'px';
-    }
-
-    function shrinkCircle(circle) {
-        const shrinkWidth = shrinkSize;
-        const shrinkHeight = shrinkSize;
-
-        circle.style.width = shrinkWidth + 'px';
-        circle.style.height = shrinkHeight + 'px';
-    }
-
-    function clearFilter() {
-        const circles = document.querySelectorAll('.circle');
-
-        circles.forEach(circle => {
-            const isGrown = circle.getAttribute('data-grown') === 'true';
-
-            if (isGrown) {
-                shrinkCircle(circle);
-                circle.setAttribute('data-grown', 'false');
-            }
-        });
-    }
-</script>
+        function samesize(image) {
+            image.style.width = '400px';
+        }
+    </script>
 
 </body>
 </html>

@@ -94,7 +94,7 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0;
-    background: radial-gradient(300% 80% at top, #a8909a 10%,  #c0cce7 45%,#626781) fixed;
+    background: radial-gradient(300% 80% at top, #a8909a 10%,  #c0cce7 45%,#626781);
 }
 
 .grid-container {
